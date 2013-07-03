@@ -4,6 +4,8 @@ An implementation of the visitor pattern for Python.
 
 Find more details at [Follow-Up to Python Visitor](http://curtis.schlak.com/2013/06/20/follow-up-to-python-visitor-pattern.html).
 
+Works on both Python 2 and 3. Specifically tested on 2.7.2 and 3.3.2.
+
 # usage
 
 First, import the module.
