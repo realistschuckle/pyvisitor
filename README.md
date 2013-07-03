@@ -52,5 +52,13 @@ class SomeVisitor(object):
 > git clone git@github.com:realistschuckle/pyvisitor.git
 > cd pyvisitor
 > python example
+Creating the abstract syntax tree that contains x = 5
+and printing it
 x=5
+
+Creating me and my dependents and printing them
+- Curtis
+  - Son
+  - Daughter
+  - Lola a Shitzu
 ```
