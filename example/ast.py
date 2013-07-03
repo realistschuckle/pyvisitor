@@ -1,6 +1,7 @@
 import sys
 import os
 
+# Put the path to the visitor module on the search path
 path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src'))
 if not path in sys.path:
   sys.path.insert(1, path)
@@ -8,23 +9,23 @@ if not path in sys.path:
 import visitor
 
 class BaseNode:
-	def accept(self, visitor):
-		visitor.visit(self)
+  def accept(self, visitor):
+    visitor.visit(self)
 
 
 class Literal(BaseNode):
-	def __init__(self, val):
-		self.value = val
+  def __init__(self, val):
+    self.value = val
 
 
 class VariableNode(BaseNode):
-	def __init__(self, name):
-		self.name = name
+  def __init__(self, name):
+    self.name = name
 
 
 class AssignmentExpression(BaseNode):
-	def __init__(self, left, right):
-		self.children = [left, right]
+  def __init__(self, left, right):
+    self.children = [left, right]
 
 
 class AbstractSyntaxTreeVisitor(object):
