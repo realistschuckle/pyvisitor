@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys
 import os
 
@@ -40,7 +41,7 @@ class DescendantsVisitor(object):
 	@visitor.when(Person)
 	def visit(self, member):
 		self.write_padding()
-		print '-', member.name
+		print('-', member.name)
 		self.level += 1
 		for dep in member.deps:
 			dep.accept(self)
@@ -49,7 +50,7 @@ class DescendantsVisitor(object):
 	@visitor.when(Pet)
 	def visit(self, member):
 		self.write_padding()
-		print '-', member.name, 'a', member.breed
+		print('-', member.name, 'a', member.breed)
 
 	def write_padding(self):
 		for i in range(self.level):

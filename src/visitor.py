@@ -34,7 +34,8 @@ def on(param_name):
 def when(param_type):
   def f(fn):
     frame = inspect.currentframe().f_back
-    dispatcher = frame.f_locals[fn.func_name]
+    func_name = fn.func_name if 'func_name' in dir(fn) else fn.__name__
+    dispatcher = frame.f_locals[func_name]
     if not isinstance(dispatcher, Dispatcher):
       dispatcher = dispatcher.dispatcher
     dispatcher.add_target(param_type, fn)

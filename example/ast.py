@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys
 import os
 
@@ -42,7 +43,7 @@ class AbstractSyntaxTreeVisitor(object):
     Will run for nodes that do specifically match the
     provided type.
     """
-    print "Unrecognized node:", node
+    print("Unrecognized node:", node)
 
   @visitor.when(AssignmentExpression)
   def visit(self, node):
