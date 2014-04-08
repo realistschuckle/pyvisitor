@@ -1,13 +1,13 @@
 from __future__ import print_function
 import familytree as ft
-import ast
+import ex_ast as exast
 
 print('Creating the abstract syntax tree that contains x = 5')
 print('and printing it')
-v = ast.VariableNode('x')
-l = ast.Literal(5)
-n = ast.AssignmentExpression(v, l)
-visitor = ast.AbstractSyntaxTreeVisitor()
+v = exast.VariableNode('x')
+l = exast.Literal(5)
+n = exast.AssignmentExpression(v, l)
+visitor = exast.AbstractSyntaxTreeVisitor()
 visitor.visit(n)
 print('')
 
