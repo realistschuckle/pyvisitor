@@ -50,7 +50,7 @@ class Dispatcher(object):
   def __init__(self, param_name, fn):
     frame = inspect.currentframe().f_back.f_back
     top_level = frame.f_locals == frame.f_globals
-    self.param_index = inspect.getargspec(fn).args.index(param_name)
+    self.param_index = self.__argspec(fn).args.index(param_name)
     self.param_name = param_name
     self.targets = {}
 
@@ -67,3 +67,11 @@ class Dispatcher(object):
 
   def add_target(self, typ, target):
     self.targets[typ] = target
+
+  @staticmethod
+  def __argspec(fn):
+    # Support for Python 3 type hints requires inspect.getfullargspec
+    if hasattr(inspect, 'getfullargspec'):
+      return inspect.getfullargspec(fn)
+    else:
+      return inspect.getargspec(fn)
