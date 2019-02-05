@@ -26,7 +26,7 @@ Then, mark the method and parameter that provides dynamic dispatching.
 ```python
 class SomeVisitor(object):
   @visitor.on('node') # Note the name of the parameter in the on decorator
-  def visit(self, node);
+  def visit(self, node):
     pass
 ```
 
@@ -36,7 +36,7 @@ the type of the argument.
 ```python
 class SomeVisitor(object):
   @visitor.on('node') # Note the name of the parameter in the on decorator
-  def visit(self, node);
+  def visit(self, node):
     pass
 
   @visitor.when(MyFirstClass)
